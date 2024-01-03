@@ -52,6 +52,7 @@ try {
   uploader.upload(uploadOptions).then(function (info) {
     core.info(`upload success. app info:`);
     core.info(JSON.stringify(info));
+    core.setOutput("app", info);
   }).catch(console.error);
 
 } catch (error) {
