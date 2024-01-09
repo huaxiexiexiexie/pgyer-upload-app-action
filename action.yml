@@ -29,8 +29,12 @@ inputs:
     description: 'build channel shortcut'
     required: false
 outputs:
-  info:
-    description: 'app information'
+  buildId:
+    description: 'app build identifier'
+  buildVersion:
+    description: 'app build number'
+  buildUrl:
+    description: 'app download url'
 runs:
   using: 'node16'
   main: 'dist/index.js'
