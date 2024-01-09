@@ -11492,6 +11492,10 @@ try {
 
   const uploader = new PGYERAppUploader(apiKey);
   uploader.upload(uploadOptions).then(function (info) {
+    let buildUrl = "http://www.pgyer.com/"+info.data.buildKey;
+    core.setOutput("buildId", info.data.buildIdentifier);
+    core.setOutput("buildVersion", info.data.buildBuildVersion);
+    core.setOutput("buildUrl", buildUrl);
     core.info(`upload success. app info:`);
     core.info(JSON.stringify(info));
   }).catch(console.error);
